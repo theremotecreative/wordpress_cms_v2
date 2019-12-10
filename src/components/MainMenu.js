@@ -9,11 +9,6 @@ const MainMenu = () => (
             items {
               title
               object_slug
-              wordpress_children {
-                title
-                url
-                object_slug
-              }
             }
           }
         }
@@ -33,18 +28,6 @@ const MainMenu = () => (
                 >
                 {item.title}
                 </Link>
-                  <ul className="subMenu">
-                    {item.wordpress_children && item.wordpress_children.map((subitem) =>
-                      <li key={item.object_slug}>
-                          <Link 
-                            to={subitem.object_slug}
-                            style={{ color: `rebeccapurple`, textDecoration: `none`, fontFamily: `sans-serif`, }} 
-                          >
-                            {subitem.title}
-                          </Link>
-                      </li>
-                    )}
-                  </ul>
             </li>
             ))}
         </ul>
