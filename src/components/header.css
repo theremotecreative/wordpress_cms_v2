@@ -1,0 +1,125 @@
+/* Header CSS */
+
+.mainLogo {
+    margin: 0;
+}
+
+.mainMenu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+/* CSS for submenu dropdown */
+
+.mainMenuItem {
+    position: relative;
+}
+
+.subMenu {
+    position: absolute;
+    width: 150px;
+    visibility: hidden;
+    opacity: 0;
+    list-style: none;
+    background-color: #eee;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+    margin: 0;
+    transition-duration: .3s;
+}
+
+.subMenu li {
+    padding: 10px;
+    margin: 0px;
+}
+
+.mainMenuItem:hover .subMenu {
+    visibility: visible;
+    opacity: 1;
+}
+/* CSS for mobile menu */
+.mobileIcon {
+    display: none;
+    position: relative;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+}
+
+.mobileMenuContainer {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition-duration: .3s;
+}
+
+.mobileMenu {
+    list-style: none;
+    padding: 20px;
+}
+
+.hamburger1 {
+    position: absolute;
+    top: 8px;
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    transition-duration: .3s;
+}
+
+.hamburger2 {
+    position: absolute;
+    top: 20px;
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    transition-duration: .3s;
+}
+
+.hamburger3 {
+    position: absolute;
+    top: 32px;
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    transition-duration: .3s;
+}
+
+.mobileOpen .hamburger1 {
+    transform: rotate(45deg) translate(9px, 12px);
+}
+
+.mobileOpen .hamburger2 {
+    opacity: 0;
+}
+
+.mobileOpen .hamburger3 {
+    transform: rotate(-45deg) translate(5px, -8px);
+}
+
+.mobileOpen .mobileMenuContainer {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
+
+/* Media Queries */
+
+@media (max-width:800px) {
+    .mainMenu {
+        display: none;
+    }
+    .mobileIcon {
+        display: block;
+    }
+}
