@@ -1,0 +1,59 @@
+import React from "react"
+import { graphql } from 'gatsby'
+import Img from "gatsby-image"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import FadeLink from "../components/FadeLink"
+import pageCSS from "./pageCSS.module.css"
+
+const PortfolioPage = ({ data }) => (
+  <Layout>
+    <SEO title="Portfolio" keywords={[`gatsby`, `application`, `react`]} />
+    <ul className={pageCSS.postList}>
+      {data.allWordpressWpProject.edges.map(post => (
+        <li className={pageCSS.blogPost}>
+          <FadeLink to={`/project/${post.node.slug}`} className={pageCSS.imageLink} >
+            <Img sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} className={pageCSS.postImage} />
+          </FadeLink>
+            <div className={pageCSS.postContent}>
+              <FadeLink to={`/project/${post.node.slug}`} style={{ display: "flex", color: "black", textDecoration: "none" }} >
+                <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} style={{ marginBottom: 0 }} />
+              </FadeLink>
+              <p style={{ margin: 0, color: "grey" }}>
+                Price: ${post.node.acf.project_price}
+              </p>
+              <div dangerouslySetInnerHTML={{ __html: post.node.acf.short_description }} />
+            </div>
+        </li>
+      ))}
+    </ul>
+  </Layout>
+)
+
+export default PortfolioPage
+
+export const query = graphql`
+  query {
+    allWordpressWpProject {
+      edges {
+        node {
+          title
+          slug
+          acf {
+            project_price
+            short_description
+          }
+          featured_media {
+            localFile {
+              childImageSharp {
+                sizes(maxWidth: 1200) {
+                    ...GatsbyImageSharpSizes
+                  }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
