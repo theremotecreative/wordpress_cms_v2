@@ -7,16 +7,9 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import posed from "react-pose"
 import { useStaticQuery, graphql } from "gatsby"
-import { TransitionState } from "gatsby-plugin-transition-link"
 import Header from "./header"
 import "./layout.css"
-
-export const Fade = posed.div({
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-})
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -41,18 +34,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>
-          <TransitionState>
-            {({ transitionStatus }) => (
-              <Fade
-                  pose={
-                    ['entering', 'entered'].includes(transitionStatus)
-                    ? 'visible'
-                    : 'hidden'
-                  }>
-                  {children}
-              </Fade>
-            )}
-          </TransitionState>
+          {children}
         </main>
         <footer>
           © {new Date().getFullYear()}, Built with
