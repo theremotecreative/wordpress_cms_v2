@@ -7,6 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import posed from "react-pose"
 import { useStaticQuery, graphql } from "gatsby"
 import { TransitionState } from "gatsby-plugin-transition-link"
 import Header from "./header"
