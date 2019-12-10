@@ -27,6 +27,44 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        // Source Website from subdomain
+        baseUrl: "blog-cms.theremotecreative.com",
+        protocol: "http",
+        hostingWPCOM: false,
+        // Using advanced custom fields
+        useACF: true,
+        acfOptionPageIds: [],
+        verboseOutput: false,
+        perPage: 100,
+        // Replace source url with gatsby site url
+        /*searchAndReplaceContentUrls: {
+          sourceUrl: "http://blog-cms.theremotecreative.com",
+          replacementUrl: "http://localhost:8000/",
+        },*/
+        // Set how many simultaneous requests are sent at once.
+        concurrentRequests: 10,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/project", // <== Custom post slug
+          "**/media",
+          "**/tags",
+          "**/taxonomies",
+          "**/users",
+          "**/*/*/menus", // <== Menu api endpoint
+          "**/*/*/menu-locations", // <== Menu api endpoint
+        ],
+        excludedRoutes: [],
+        keepMediaSizes: false,
+        normalizer: function({ entities }) {
+          return entities
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
