@@ -1,9 +1,8 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from '../components/layout'
 import SEO from "../components/seo"
-import FadeLink from "../components/FadeLink"
 import categoryCSS from "./Category.module.css"
 
 const ProjectCategoryTemplate = ({ data }) => (
@@ -17,13 +16,13 @@ const ProjectCategoryTemplate = ({ data }) => (
                 <ul className={categoryCSS.postList}>
                 {data.allWordpressWpProject.edges.map(post => (
                     <li className={categoryCSS.blogPost}>
-                    <FadeLink to={`/project/${post.node.slug}`} className={categoryCSS.imageLink} >
+                    <Link to={`/project/${post.node.slug}`} className={categoryCSS.imageLink} >
                       <Img sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} className={categoryCSS.postImage} />
-                    </FadeLink>
+                    </Link>
                       <div className={categoryCSS.postContent}>
-                        <FadeLink to={`/project/${post.node.slug}`} style={{ display: "flex", color: "black", textDecoration: "none" }} >
+                        <Link to={`/project/${post.node.slug}`} style={{ display: "flex", color: "black", textDecoration: "none" }} >
                           <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} style={{ marginBottom: 0 }} />
-                        </FadeLink>
+                        </Link>
                         <p style={{ margin: 0, color: "grey" }}>
                           Price: ${post.node.acf.project_price}
                         </p>

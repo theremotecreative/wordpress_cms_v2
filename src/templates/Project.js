@@ -1,8 +1,7 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
-import FadeLink from "../components/FadeLink"
 import SEO from "../components/seo"
 const ProjectTemplate = ({ data }) => (
   <Layout>
@@ -14,9 +13,9 @@ const ProjectTemplate = ({ data }) => (
     <p>
       Categories: 
       {data.wordpressWpProject.categories.map(category => (
-          <FadeLink to={`/project-category/${category.slug}`} style={{ padding: '0 0 0 10px' }}>
+          <Link to={`/project-category/${category.slug}`} style={{ padding: '0 0 0 10px' }}>
               {category.name}
-          </FadeLink>
+          </Link>
        ))}
     </p>
     <Img sizes={data.wordpressWpProject.featured_media.localFile.childImageSharp.sizes} alt={data.wordpressWpProject.title} style={{ maxHeight: 450 }} />
