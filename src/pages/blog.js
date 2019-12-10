@@ -1,8 +1,9 @@
 import React from "react"
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import FadeLink from "../components/FadeLink"
 import pageCSS from "./pageCSS.module.css"
 
 const BlogPage = ({ data }) => (
@@ -11,13 +12,13 @@ const BlogPage = ({ data }) => (
     <ul className={pageCSS.postList}>
       {data.allWordpressPost.edges.map(post => (
         <li className={pageCSS.blogPost}>
-          <Link to={`/post/${post.node.slug}`} className={pageCSS.imageLink} >
+          <FadeLink to={`/post/${post.node.slug}`} className={pageCSS.imageLink} >
             <Img sizes={post.node.featured_media.localFile.childImageSharp.sizes} alt={post.node.title} className={pageCSS.postImage} />
-          </Link>
+          </FadeLink>
           <div className={pageCSS.postContent}>
-            <Link to={`/post/${post.node.slug}`} style={{ color: "black", textDecoration: "none" }} >
+            <FadeLink to={`/post/${post.node.slug}`} style={{ color: "black", textDecoration: "none" }} >
               <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} style={{ marginBottom: 0 }} />
-            </Link>
+            </FadeLink>
             <p style={{ margin: 0, color: "grey" }}>
               Written by {post.node.author.name} on {post.node.date}
             </p>
