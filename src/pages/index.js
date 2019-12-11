@@ -30,6 +30,9 @@ const IndexPage = () => (
       <li>Submenus</li>
       <li>Recaptcha</li>
       <li>Sitemap</li>
+      <li>Google Analytics</li>
+      <li>A/B Testing</li>
+      <li>PWA plugin</li>
     </ul>
   </Layout>
 )
