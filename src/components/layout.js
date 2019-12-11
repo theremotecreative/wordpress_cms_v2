@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import PageTransition from 'gatsby-plugin-page-transitions'
 import Header from "./header"
 import "./layout.css"
 
@@ -34,7 +35,9 @@ const Layout = ({ children }) => {
         }}
       >
         <main>
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </main>
         <footer>
           © {new Date().getFullYear()}, Built with
