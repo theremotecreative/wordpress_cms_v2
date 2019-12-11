@@ -7,7 +7,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <h1>Headless CMS Gatsby Base Template</h1>
     <p>Welcome to your new Gatsby site. This site is a base template for building something amazing with Gatsby while using WordPress as a headless CMS </p>
-    <p>This is Version 1.0. Delete this content to create a new home page</p>
+    <p>This is Version 2.0. Delete this content to create a new home page</p>
     <p>This version contains the following features out of the box:</p>
     <ul>
       <li>Pulls and renders posts and pages from a wordpress site</li>
@@ -29,6 +29,7 @@ const IndexPage = () => (
       <li>Search form in menu</li>
       <li>Submenus</li>
       <li>Recaptcha</li>
+      <li>Mailchimp Email collection</li>
       <li>Sitemap</li>
       <li>Google Analytics</li>
       <li>A/B Testing</li>
