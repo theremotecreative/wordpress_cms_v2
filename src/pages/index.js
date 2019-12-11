@@ -24,12 +24,14 @@ const IndexPage = () => (
     <p>Ideas for future versions:</p>
     <ul>
       <li>Contact page with forms, icons, and google maps</li>
+      <li>Animations with page scroll</li>
       <li>Author page and archive</li>
       <li>Pagination</li>
       <li>Isotope sorting on Portfolio page</li>
       <li>Search form in menu</li>
       <li>Submenus</li>
       <li>Recaptcha</li>
+      <li>User authentication</li>
       <li>Mailchimp Email collection</li>
       <li>Sitemap</li>
       <li>Google Analytics</li>
