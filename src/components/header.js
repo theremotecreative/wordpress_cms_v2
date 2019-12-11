@@ -22,7 +22,7 @@ class Header extends Component {
       headerName += ' mobileOpen';
     }
     return (
-      <header style={{ background: `rebeccapurple`, marginBottom: `1.45rem`, }} className={headerName}>
+      <header style={{ background: `#000`, marginBottom: `1.45rem`, }} className={headerName}>
         <div style={{ margin: `0 auto`, maxWidth: 960, padding: `1.45rem 1.0875rem`, display: `flex`, justifyContent: `space-between`, alignItems: `center`, }} >
           <MainLogo></MainLogo>
           <MainMenu></MainMenu>

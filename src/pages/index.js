@@ -1,20 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <h1>Headless CMS Gatsby Base Template</h1>
+    <p>Welcome to your new Gatsby site. This site is a base template for building something amazing with Gatsby while using WordPress as a headless CMS </p>
+    <p>This is Version 1.0. Delete this content to create a new home page</p>
+    <p>This version contains the following features out of the box:</p>
+    <ul>
+      <li>Pulls and renders posts and pages from a wordpress site</li>
+      <li>Pulls and renders a custom post type called "Project" which uses ACF fields</li>
+      <li>Portfolio page displays custom post type loop</li>
+      <li>Menu has links from API but hardcoded page links</li>
+      <li>Categories are included in post and custom post type single posts</li>
+      <li>Category archive template for posts and custom posts</li>
+      <li>Includes a simple menu and mobile menu</li>
+      <li>Includes a simple fade page transition</li>
+      <li>Simple SEO meta fields</li>
+      <li>404 page</li>
+    </ul>
+    <p>Ideas for future versions:</p>
+    <ul>
+      <li>Contact page with forms, icons, and google maps</li>
+      <li>Pagination</li>
+      <li>Isotope sorting on Portfolio page</li>
+      <li>Search form in menu</li>
+      <li>Submenus</li>
+      <li>Recaptcha</li>
+      <li>Sitemap</li>
+    </ul>
   </Layout>
 )
 
