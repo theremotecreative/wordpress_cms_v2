@@ -43,9 +43,11 @@ const Layout = ({ children }) => {
           © {new Date().getFullYear()}, Built by
           {` `}
           <a href="https://theremotecreative.com" target="_blank">The Remote Creative</a>
+          {` `}
           with
           {` `}
           <a href="https://www.gatsbyjs.org" target="_blank">Gatsby</a>
+          {` `}
           and
           {` `}
           <a href="https://www.wordpress.org" target="_blank">WordPress</a>
