@@ -19,7 +19,7 @@ const IndexPage = () => (
       <li>Includes a simple fade page transition</li>
       <li>Simple SEO meta fields</li>
       <li>404 page</li>
-      <li>Offline accessability</li>
+      <li>Offline accessibility</li>
     </ul>
   </Layout>
 )
